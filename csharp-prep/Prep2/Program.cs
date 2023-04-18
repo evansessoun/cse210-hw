@@ -44,5 +44,14 @@ class Program
         }
 
         Console.WriteLine($"Your grade is {Letter}{gradeSign}.");
+
+        if (score >= 70)
+        {
+            Console.WriteLine("Congratulation, You passed! ");
+        }
+        else
+        {
+            Console.WriteLine("Wishing you a better Luck next time.");
+        }
     }
 }
