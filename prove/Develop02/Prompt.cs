@@ -13,8 +13,19 @@ public class Prompt
     public string prompt6 ="What made you feel sad today?";
     public string prompt7 ="What are some good news you heard today?";
     public string prompt8 ="Who was the most interesting person I interacted with today?";
+
+    string _menuMessage = "Welcome to the Journal Program \n" + "Please select one of the following choices \n" + 
+                                "1. Write \n" +
+                                "2. Display \n" +
+                                "3. Load \n" +
+                                "4. Save \n" +
+                                "5. Quit \n";
+    public void DisplayMenu()
+    {
+        Console.WriteLine(_menuMessage);
+    }
     
-    public string displayPrompt()
+    public string DisplayPrompt()
     {
         _prompt.Add(prompt1);
         _prompt.Add(prompt2);
@@ -32,9 +43,5 @@ public class Prompt
         return _randomPrompt;
     }
 
-    //public int limit,
-    //int limit;
-    //limit =  _prompt.Count;
-    
-    
+    public Prompt(){}
 }
