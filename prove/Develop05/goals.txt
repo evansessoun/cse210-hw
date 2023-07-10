@@ -1,0 +1,7 @@
+1800
+SimpleGoal: Read the book of Alma, Read the first 5 chapters of Alma, 100,True
+EternalGoal:Pray every morning,Pray for 5 minutes every morning,50
+ChecklistGoal:Attend the temple 3,Attend the temple and perform ordinances,200,1000,3,3
+SimpleGoal:Invite a friend to church,Invite a friend to upcoming conference,100,False
+ChecklistGoal:Ministering work,Visit my ministering family thrice this quater,100,500,3,1
+SimpleGoal:Share a conference talk,Share my favorite talk on social media,200,False
