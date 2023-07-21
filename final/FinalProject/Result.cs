@@ -9,6 +9,12 @@ public class Result
     private float _courseMinScore = 0.0F;
     private float _courseAvgScore = 0.0F;
     private string _studentName ="";
+
+    public List<Student> GetStudentList()
+    {
+        List<Student> studentList = _studentList;
+        return studentList;
+    }
     
     public void CalcAvgScore(List<float> courseScore)
     {   
@@ -80,9 +86,14 @@ public class Result
         }
     }
 
-    public void ProcessStudentScore()
+    public Result()
     {
-        List<Student> studentList = _studentList;
+
+    }
+
+    public void ProcessStudentScore(List<Student> studentLists)
+    {
+        List<Student> studentList = studentLists;
         foreach(Student student in studentList)
         {
             _studentName = student.GetStudentName();
@@ -109,22 +120,20 @@ public class Result
             Console.WriteLine($"Highest Score: {_courseMaxScore}");
             Console.WriteLine($"Lowest Score: {_courseMinScore}");
             Console.WriteLine($"Average Score: {_courseAvgScore}");
+            Console.WriteLine(" ");
 
             
         }
-        
+    }    
 
-
-    }
-
-    public void ProcessGeneralScore()
+    public void ProcessGeneralScore(List<Student> studentList)
     {
         List<float> mathScores = new List<float>();
         List<float> scienceScores = new List<float>();
         List<float> programmingScores = new List<float>();
         List<List<float>> courseList = new List<List<float>>();
         List<Course> courses = new List<Course>();
-        foreach(Student student in _studentList)
+        foreach(Student student in studentList)
         {
             courses = student.GetCoursesTaken();
             foreach(Course course in courses)
@@ -173,6 +182,7 @@ public class Result
             Console.WriteLine($"Highest Score: {_courseMaxScore}");
             Console.WriteLine($"Lowest Score: {_courseMinScore}");
             Console.WriteLine($"Average Score: {_courseAvgScore}");
+            Console.WriteLine(" ");
 
         }
     }

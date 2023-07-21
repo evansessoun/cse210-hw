@@ -4,12 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
+        Menu menu = new Menu();
+        Result result = new Result();
+        List<Student> _studentList = new List<Student>();
         bool inSession =true;
         while(inSession)
         {
             int _userChoice = 0;
-            Menu menu = new Menu();
-            Result result = new Result();
+            
             //Course course  = new Course();
             //ScienceCourse scienceCourse = new ScienceCourse();
             //ProgrammingCourse programmingCourse  = new ProgrammingCourse();
@@ -31,16 +33,25 @@ class Program
             {
                 Student student = new Student();
                 student.CreateDetails();
-                result.AddStudentList(student);
+                _studentList.Add(student);
 
             }
             else if (_userChoice == 2)
             {
-                result.ProcessStudentScore();
+                result.ProcessStudentScore(_studentList);
+                ///
+                foreach (Student student in result.GetStudentList())
+                {
+                    Console.WriteLine(student.GetStudentName());
+                    foreach(float score in student.GetStudentScore())
+                    {
+                        Console.WriteLine(score);
+                    }
+                }
             }
             else if (_userChoice == 3)
             {
-                result.ProcessGeneralScore();
+                result.ProcessGeneralScore(_studentList);
             }
             else if (_userChoice == 4)
             {
