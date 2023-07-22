@@ -100,7 +100,7 @@ public class Result
             List<Course> coursesTaken = student.GetCoursesTaken();
             List<float> scores  = new List<float>();
             Console.WriteLine(" ");
-            Console.WriteLine($"General Result for {_studentName}:");
+            Console.WriteLine($"Result for {_studentName}:");
             Console.WriteLine($"Number of courses enrolled: {coursesTaken.Count()}");
             Console.WriteLine($"Course Name:        Course Score");
 

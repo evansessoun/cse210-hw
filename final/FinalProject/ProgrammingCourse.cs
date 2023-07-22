@@ -2,6 +2,8 @@ using System;
 
 public class ProgrammingCourse: Course
 {
+    float _loadedScore =0.0F;
+    private bool _loading = false;
     private float _projectScore = 0;
     private float _totalScore = 0;
     private float _projectPercent = 0.3F;
@@ -11,6 +13,13 @@ public class ProgrammingCourse: Course
     {
         SetCourseName("Programming");
         CreateCourse();
+    }
+    public ProgrammingCourse(string Loading, float score)
+    {
+        SetCourseName("Programming");
+        SetCourseScore(score);
+        _loading = true;
+        _loadedScore =score;
     }
     public void SetProjectScore()
     {
@@ -32,11 +41,21 @@ public class ProgrammingCourse: Course
         float projectScore = int.Parse(Console.ReadLine());
         _projectScore = projectScore;
         _totalScore = GetCourseScore() * _coursePercent + _projectScore * _projectPercent;
+        SetCourseScore(_totalScore);
     }
 
     public float GetTotalScore()
     {
-        float totalScore = _totalScore;
+        float totalScore = 0.0F;
+        if(_loading)
+        {
+            _totalScore = _loadedScore;
+        }
+        else
+        {
+            totalScore =  _totalScore;
+        }
         return totalScore;
     }
-}
+
+}    

@@ -20,8 +20,12 @@ public class Course
         float courseScore = float.Parse(Console.ReadLine());
         _courseScore = courseScore;
     }
+    public void SetCourseScore(float score)
+    {
+        _courseScore = score;
+    }
 
-    public float GetCourseScore()
+    public virtual float GetCourseScore()
     {
         float courseScore = _courseScore;
         return courseScore;

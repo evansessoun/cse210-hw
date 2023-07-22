@@ -8,5 +8,10 @@ public class MathCourse:Course
         SetCourseName("Mathematics");
         CreateCourse();
     }
+    public MathCourse(string courseName,float score)
+    {
+        SetCourseName("Mathematics");
+        SetCourseScore(score);
+    }
     
 }

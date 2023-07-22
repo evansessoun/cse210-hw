@@ -1,0 +1,3 @@
+Evans Essoun,EvEss343~Mathematics:89,Science:93,Programming:93
+Richard Snow,RcSh532~Mathematics:90,Science:98,Programming:88
+Peter Black,PBsu356~Mathematics:79,Science:88

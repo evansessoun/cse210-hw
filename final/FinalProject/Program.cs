@@ -7,16 +7,11 @@ class Program
         Menu menu = new Menu();
         Result result = new Result();
         List<Student> _studentList = new List<Student>();
+        Databased database = new Databased();
         bool inSession =true;
         while(inSession)
         {
             int _userChoice = 0;
-            
-            //Course course  = new Course();
-            //ScienceCourse scienceCourse = new ScienceCourse();
-            //ProgrammingCourse programmingCourse  = new ProgrammingCourse();
-            //MathCourse mathCourse = new MathCourse();
-            
 
             menu.DisplayMenu();
 
@@ -39,15 +34,6 @@ class Program
             else if (_userChoice == 2)
             {
                 result.ProcessStudentScore(_studentList);
-                ///
-                foreach (Student student in result.GetStudentList())
-                {
-                    Console.WriteLine(student.GetStudentName());
-                    foreach(float score in student.GetStudentScore())
-                    {
-                        Console.WriteLine(score);
-                    }
-                }
             }
             else if (_userChoice == 3)
             {
@@ -55,9 +41,14 @@ class Program
             }
             else if (_userChoice == 4)
             {
-                
+                database.Save(_studentList);
             }
             else if (_userChoice == 5)
+            {
+                database.Load();
+                _studentList = database.GetStudentList();
+            }
+            else if (_userChoice == 6)
             {
                 inSession = false;
             }

@@ -28,6 +28,11 @@ public class Student
         _studentName = studentName;
     }
 
+    public void SetStudentName(string studentName)
+    {
+        _studentName = studentName;
+    }
+
     public string GetStudentID()
     {
         string studentID = _studentID;
@@ -45,12 +50,30 @@ public class Student
         string studentID = Console.ReadLine();
         _studentID = studentID;
     }
+
+    public void SetStudentID(string studentID)
+    {
+        _studentID = studentID;
+    }
+
+    public void SetCourseName()
+    {
+        
+    }
+
     public void AddCourse(Course course)
     {
         _coursesTaken.Add(course);
         _numCoursesTaken ++;
         _courseScores.Add(course.GetCourseScore());
        
+    }
+
+    public void AddCourse(Course course, float score)
+    {
+        _coursesTaken.Add(course);
+        _numCoursesTaken ++;
+        _courseScores.Add(score);
     }
 
     public List<Course> GetCoursesTaken()
